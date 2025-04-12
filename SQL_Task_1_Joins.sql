@@ -104,18 +104,62 @@ WHERE SaleID IN(10003, 10004);
 select cricket_sales.SaleID, orders.orderid from 
 cricket_Sales
 INNER JOIN orders ON cricket_sales.productName = orders.productName;
+SaleID	orderid
+20000	5001
+60000	5002
+20000	5003
+40000	5004
+50000	5005
+20000	5007
+30000	5008
+70000	5009
 
 select cricket_sales.SaleID, orders.orderid from 
 cricket_Sales
 LEFT JOIN orders ON cricket_sales.productName = orders.productName;
+SaleID	orderid
+10000	NULL
+20000	5001
+20000	5003
+20000	5007
+30000	5008
+40000	5004
+50000	5005
+60000	5002
+70000	5009
+80000	NULL
+90000	NULL
 
 select cricket_sales.SaleID, orders.orderid from 
 cricket_Sales
 RIGHT JOIN orders ON cricket_sales.productName = orders.productName;
+SaleID	orderid
+NULL	5000
+20000	5001
+60000	5002
+20000	5003
+40000	5004
+50000	5005
+NULL	5006
+20000	5007
+30000	5008
+70000	5009
+NULL	5010
 select cricket_sales.SaleID, orders.orderid from 
 cricket_Sales
 FULL JOIN orders ON cricket_sales.productName = orders.productName;
-
-select cricket_sales.SaleID, orders.orderid from 
-cricket_Sales
-FULL JOIN orders ON cricket_sales.productName = orders.productName;
+SaleID	orderid
+10000	NULL
+20000	5001
+20000	5003
+20000	5007
+30000	5008
+40000	5004
+50000	5005
+60000	5002
+70000	5009
+80000	NULL
+90000	NULL
+NULL	5000
+NULL	5006
+NULL	5010
